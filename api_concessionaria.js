@@ -19,3 +19,8 @@ app.post('/cadastro/motos', (request, response) => {
     })
     return response.send("Moto cadastrada com sucesso.")
 })
+
+app.get('/listar/motos', (request, response) => {
+    console.log(request.body);
+    return response.json(motos)
+})
