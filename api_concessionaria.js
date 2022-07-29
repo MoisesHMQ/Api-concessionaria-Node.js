@@ -52,3 +52,9 @@ app.get('/listar/carro', (request, response) => {
     return response.json(carro)
 })
 
+app.delete('/excluir/carros', (request,response) => {
+    const id = carro.indexOf('id');
+    const delete_carro = carro.splice(id,1)
+        
+    return response.send(delete_carro)
+})
