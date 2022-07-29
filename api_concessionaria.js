@@ -83,3 +83,8 @@ app.post('/login/cliente', (request, response) => {
             return response.send("Erro: cpf ou Senha incorretos.");
         }
     })
+
+app.get('/listar/cliente', (request, response) => {
+    console.log(request.body);
+    return response.json(cliente)
+})
