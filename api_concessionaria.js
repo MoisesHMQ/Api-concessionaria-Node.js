@@ -46,3 +46,9 @@ app.post('/cadastro/carro', (request, response) => {
     })
     return response.send("Carro cadastrado com sucesso.")
 })
+
+app.get('/listar/carro', (request, response) => {
+    console.log(request.body);
+    return response.json(carro)
+})
+
