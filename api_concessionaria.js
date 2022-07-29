@@ -73,3 +73,13 @@ app.post('/cadastro/cliente', (request, response) => {
     })
     return response.send("Cliente criado com sucesso.")
 })
+
+app.post('/login/cliente', (request, response) => {
+    const login = cliente.find((user) => user.cpf == request.body.cpf && user.senha == request.body.senha)
+        if(login){
+            return response.send("Status: Logado, seja bem vindo")
+
+        }else{
+            return response.send("Erro: cpf ou Senha incorretos.");
+        }
+    })
