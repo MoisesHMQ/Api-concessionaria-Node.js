@@ -58,3 +58,18 @@ app.delete('/excluir/carros', (request,response) => {
         
     return response.send(delete_carro)
 })
+
+const cliente = [];
+
+app.post('/cadastro/cliente', (request, response) => {
+    const validar_cliente = cliente.find((vcl) => vcl.cpf == request.body.cpf)
+        if (validar_cliente){
+            return response.send("Status: Cliente Já Cadastrado.")}
+        
+        cliente.push({
+        id: uuid.v4(),
+        cpf: request.body.cpf,
+        senha: request.body.senha
+    })
+    return response.send("Cliente criado com sucesso.")
+})
