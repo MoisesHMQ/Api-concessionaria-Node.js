@@ -31,3 +31,18 @@ app.delete('/excluir/motos', (request,response) => {
         
     return response.send(delete_moto)
 })
+
+const carro = [];
+
+app.post('/cadastro/carro', (request, response) => {
+    const validarcarro = carro.find((vc) => vc.Carro == request.body.Carro)
+        if (validarcarro){
+            return response.send("Status: Carro Já Cadastrado.")}
+        
+        carro.push({
+        id: uuid.v4(),
+        Carro: request.body.Carro,
+        ano: request.body.ano
+    })
+    return response.send("Carro cadastrado com sucesso.")
+})
