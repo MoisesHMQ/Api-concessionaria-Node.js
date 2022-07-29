@@ -24,3 +24,10 @@ app.get('/listar/motos', (request, response) => {
     console.log(request.body);
     return response.json(motos)
 })
+
+app.delete('/excluir/motos', (request,response) => {
+    const id = motos.indexOf('id');
+    const delete_moto = motos.splice(id,1)
+        
+    return response.send(delete_moto)
+})
