@@ -95,3 +95,12 @@ app.delete('/excluir/cliente', (request,response) => {
         
     return response.send(delete_cliente)
 })
+
+app.get('/listar/moto/carro/cliente', (request, response) => {
+    console.log(request.body);
+    return response.json(motos,carro,cliente)
+})
+
+app.listen(3000, () => {
+    console.log('servidor funcionando...')
+})
